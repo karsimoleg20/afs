@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="sqs-block html-block sqs-block-html widen" data-block-type="2">
+        <div class="sqs-layout sqs-grid-12 columns-12">
+            <div class="row sqs-row" id="alerts">
+                <!-- Here goes alerts if any -->
+            </div>
+
+            <div class="row sqs-row">
+                <div class="col sqs-col-2 span-2" data-alignment="center">
+                    <div class="row sqs-row">
+                        <h2></h2>
+                    </div>
+                </div>
+
+                <div class="col sqs-col-8 span-8" data-alignment="center">
+                    <h2 style="white-space:pre-wrap;">Floor Plan & Scale</h2>
+                    
+                    <div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47">
+                        <div class="sqs-block-content">
+                            <hr>
+                        </div>
+                    </div>
+
+                    <div class="sqs-block form-block sqs-block-form">
+                        <div class="sqs-block-content">
+                            <div class="form-wrapper">
+                                <div class="form-inner-wrapper">
+                                    <form action="{% url 'room_selection' %}" method="POST" enctype="multipart/form-data">
+                                        <div class="field-list clear">
+                                            <div class="form-item field file required">
+                                                <label class="title" for="image">
+                                                    Image
+                                                    <span class="required" aria-hidden="true">*</span>
+                                                </label>
+                                                <input class="field-element" id="image" name="image" type="file" accept=".jpg,.jpeg,.png,.pdf" spellcheck="false" aria-required="true">
+                                            </div>
+
+                                            <div class="form-item field number required">
+                                                <label class="title" for="scale">
+                                                    Scale
+                                                    <span class="required" aria-hidden="true">*</span>
+                                                </label>
+                                                <input class="field-element" id="scale" name="scale" type="number" value="100" min="0.01" step="0.01" spellcheck="false" aria-required="true">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47">
+                        <div class="sqs-block-content">
+                            <hr>
+                        </div>
+                    </div>
+
+                    <div class="row sqs-row">
+                        <div class="col sqs-col-8 span-8" data-block-type="53">
+                            <div class="sqs-block-content button-block sqs-block-button" style="width: 50%; float: left;">
+                                <div class="sqs-block-button-container--left" data-animation-role="button" data-alignment="left" data-button-size="medium">
+                                    <a href="{% url 'select_workflow' %}" class="sqs-block-button-element--medium sqs-block-button-element" data-initialized="true" id="back_btn"><i class="fas fa-angle-left" aria-hidden="true"></i> Back</a>
+                                </div>
+                            </div>
+                            <div class="sqs-block-content button-block sqs-block-button" style="margin-left: 50%;;">
+                                <div class="sqs-block-button-container--right" data-animation-role="button" data-alignment="right" data-button-size="medium">
+                                    <a href="{% url 'room_selection' %}" class="sqs-block-button-element--medium sqs-block-button-element" data-initialized="true" id="continue_btn">Continue <i class="fas fa-angle-right" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row sqs-row">
+                        <h1 style="white-space:pre-wrap;">Help</h1>
+                        <div class="sqs-block-content help" id="help_content">
+                            <div>
+                                <div style="border-bottom: 1px solid black;">
+                                    <b>Floor plan image</b>
+                                </div>
+                            </div>
+                            <p>Image with a floor plan. It should not contain any hand drawings.</p>
+
+                            <div>
+                                <div style="border-bottom: 1px solid black;">
+                                    <b>Scale</b>
+                                </div>
+                            </div>
+                            <p style="color: red;">The ratio of actual premises size to drawing size. Default scale is set to 100 based on historical data, however, you must provide scale according to your project.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col sqs-col-2 span-2" data-alignment="center">
+                    <div class="row sqs-row">
+                        <h2></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block JSscripts %}
+<script src="{% static 'js/modal_loading.js' %}"></script>
+<script src="{% static 'js/calculator/upload_floorplan.js' %}"></script>
+{% endblock %}

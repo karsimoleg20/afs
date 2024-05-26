@@ -1,0 +1,249 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="sqs-block html-block sqs-block-html widen" data-block-type="2">
+        <div class="sqs-layout sqs-grid-12 columns-12">
+            <div class="row sqs-row">
+                <div class="col sqs-col-8 span-8" data-alignment="center">
+                    <div class="row sqs-row">
+                        <h2 style="white-space:pre-wrap;">Price estimate, USD</h2>
+                        <div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47">
+                            <div class="sqs-block-content">
+                                <hr>
+                            </div>
+                        </div>
+
+                        <div class="row sqs-row">
+                            <div style="width: 36%; float: left;">
+                                <h1 style="white-space:pre-wrap;"></h1>
+                            </div>
+                            <div style="width: 32%; float: left;">
+                                <h1 style="white-space:pre-line;">Supply & 
+                                    Install</h1>
+                            </div>
+                            <div style="width: 32%; float: left;">
+                                <h1 style="white-space:pre-line;">Supply 
+                                    only</h1>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row sqs-row collapsible" style="cursor: pointer;">
+                            <div id="plus-minus" class="plus" style="width: 4%; float: left;">
+                                <i class="fas fa-plus" aria-hidden="true"></i>
+                            </div>
+                            <div style="width: 32%; float: left;">
+                                <h1 style="white-space:pre-wrap;">Materials</h1>
+                            </div>
+                            <div style="width: 32%; float: left;">
+                                <h1 style="white-space:pre-wrap;" >{{ supply_only }}</h1>
+                            </div>
+                            <div style="width: 32%; float: left;">
+                                <h1 style="white-space:pre-wrap;" >{{ supply_only }}</h1>
+                            </div>
+                        </div>
+
+                        <div class="content row sqs-row">
+                            <div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47">
+                                <div class="sqs-block-content">
+                                    <hr>
+                                </div>
+                            </div>
+
+                            <div style="width: 6%; float: left;">
+                                <h1 style="white-space:pre-wrap;"></h1>
+                            </div>
+                            <div style="width: 30%; float: left;">
+                                <h1 style="white-space:pre-wrap;">Panels</h1>
+                            </div>
+                            <div style="width: 32%; float: left;">
+                                <h1 style="white-space:pre-wrap;" >{{ panel_price }}</h1>
+                            </div>
+                            <div style="width: 32%; float: left;">
+                                <h1 style="white-space:pre-wrap;" >{{ panel_price }}</h1>
+                            </div>
+
+                            <div style="width: 6%; float: left;">
+                                <h1 style="white-space:pre-wrap;"></h1>
+                            </div>
+                            <div style="width: 30%; float: left;">
+                                <h1 style="white-space:pre-wrap;">Pedestals</h1>
+                            </div>
+                            <div style="width: 32%; float: left;">
+                                <h1 style="white-space:pre-wrap;" >{{ pedestal_price }}</h1>
+                            </div>
+                            <div style="width: 32%; float: left;">
+                                <h1 style="white-space:pre-wrap;" >{{ pedestal_price }}</h1>
+                            </div>
+
+                            <div style="width: 6%; float: left;">
+                                <h1 style="white-space:pre-wrap;"></h1>
+                            </div>
+                            <div style="width: 30%; float: left;">
+                                <h1 style="white-space:pre-wrap;">Adhesive</h1>
+                            </div>
+                            <div style="width: 32%; float: left;">
+                                <h1 style="white-space:pre-wrap;" >{{ adhesive_price }}</h1>
+                            </div>
+                            <div style="width: 32%; float: left;">
+                                <h1 style="white-space:pre-wrap;" >{{ adhesive_price }}</h1>
+                            </div>
+                            
+                            <div style="width: 6%; float: left;">
+                                <h1 style="white-space:pre-wrap;"></h1>
+                            </div>
+                            <div style="width: 30%; float: left;">
+                                <h1 style="white-space:pre-wrap;">Neoprene</h1>
+                            </div>
+                            <div style="width: 32%; float: left;">
+                                <h1 style="white-space:pre-wrap;" >{{ neoprene_price }}</h1>
+                            </div>
+                            <div style="width: 32%; float: left;">
+                                <h1 style="white-space:pre-wrap;" >{{ neoprene_price }}</h1>
+                            </div>
+
+                            <div style="width: 6%; float: left;">
+                                <h1 style="white-space:pre-wrap;"></h1>
+                            </div>
+                            <div style="width: 30%; float: left;">
+                                <h1 style="white-space:pre-wrap;">Silver tape</h1>
+                            </div>
+                            <div style="width: 32%; float: left;">
+                                <h1 style="white-space:pre-wrap;" >{{ silver_tape_price }}</h1>
+                            </div>
+                            <div style="width: 32%; float: left;">
+                                <h1 style="white-space:pre-wrap;" >{{ silver_tape_price }}</h1>
+                            </div>
+
+                            <div style="width: 6%; float: left;">
+                                <h1 style="white-space:pre-wrap;"></h1>
+                            </div>
+                            <div style="width: 30%; float: left;">
+                                <h1 style="white-space:pre-wrap;">Caps</h1>
+                            </div>
+                            <div style="width: 32%; float: left;">
+                                <h1 style="white-space:pre-wrap;" >{{ caps_price }}</h1>
+                            </div>
+                            <div style="width: 32%; float: left;">
+                                <h1 style="white-space:pre-wrap;" >{{ caps_price }}</h1>
+                            </div>
+
+                            <div style="width: 6%; float: left;">
+                                <h1 style="white-space:pre-wrap;"></h1>
+                            </div>
+                            <div style="width: 30%; float: left;">
+                                <h1 style="white-space:pre-wrap;">Delivery</h1>
+                            </div>
+                            <div style="width: 32%; float: left;">
+                                <h1 style="white-space:pre-wrap;" >{{ delivery_price }}</h1>
+                            </div>
+                            <div style="width: 32%; float: left;">
+                                <h1 style="white-space:pre-wrap;" >{{ delivery_price }}</h1>
+                            </div>
+
+                            <div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47">
+                                <div class="sqs-block-content">
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row sqs-row">
+                            <div style="width: 4%; float: left;">
+                                <h1 style="white-space:pre-wrap;"></h1>
+                            </div>
+                            <div style="width: 32%; float: left;">
+                                <h1 style="white-space:pre-wrap;">Labor</h1>
+                            </div>
+                            <div style="width: 32%; float: left;">
+                                <h1 style="white-space:pre-wrap;" >{{ labor_price }}</h1>
+                            </div>
+                            <div style="width: 32%; float: left;">
+                                <h1 style="white-space:pre-wrap;" >{{ 0 }}</h1>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row sqs-row">
+                            <div style="width: 4%; float: left;">
+                                <h1 style="white-space:pre-wrap;"></h1>
+                            </div>
+                            <div style="width: 32%; float: left;">
+                                <h1 style="white-space:pre-wrap;">Total</h1>
+                            </div>
+                            <div style="width: 32%; float: left;">
+                                <h1 style="white-space:pre-wrap;" >{{ supply_install }}</h1>
+                            </div>
+                            <div style="width: 32%; float: left;">
+                                <h1 style="white-space:pre-wrap;" >{{ supply_only }}</h1>
+                            </div>
+                        </div>
+
+                        <div class="row sqs-row">
+                            <div style="width: 4%; float: left;">
+                                <h1 style="white-space:pre-wrap;"></h1>
+                            </div>
+                            <div style="width: 32%; float: left;">
+                                <h1 style="white-space:pre-wrap;">Price per m<sup>2</sup></h1>
+                            </div>
+                            <div style="width: 32%; float: left;">
+                                <h1 style="white-space:pre-wrap;" >{{ price_per_m2_supp_inst }}</h1>
+                            </div>
+                            <div style="width: 32%; float: left;">
+                                <h1 style="white-space:pre-wrap;" >{{ price_per_m2_supp_only }}</h1>
+                            </div>
+                        </div>
+                        
+                        <div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47">
+                            <div class="sqs-block-content">
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    
+                    <form method="POST" action="{% url 'contact' %}" style="display: none;">
+                        <input id="calculations" name="calculations" type="text" value="{{ calculations }}">
+                    </form>
+
+                    <div class="row sqs-row">
+                        <div class="col sqs-col-8 span-8" data-block-type="53">
+                            <div class="sqs-block-content button-block sqs-block-button" style="width: 50%; float: left;">
+                                <div class="sqs-block-button-container--center" data-animation-role="button" data-alignment="center" data-button-size="medium">
+                                    <a href="{% url 'select_workflow' %}" class="sqs-block-button-element--medium sqs-block-button-element" data-initialized="true" id="new_calc">New calculation</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row sqs-row">
+                        <h1 style="white-space:pre-wrap;">Help</h1>
+                        <div class="sqs-block-content help" id="help_content">
+                           <p><i>* Prices provided are ballpark estimates only and can decrease or increase, according to accurate calculations and actual project requirements</i></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col sqs-col-4 span-4 filter-cell" data-alignment="center">
+                    <h1 style="white-space:pre-wrap; margin-left: 20px;">Your selecion</h1>
+                    {% for k, v in filters.items %}
+                    <div class="row sqs-row cell-selected">
+                        <div class="col sqs-col-2 span-2 filter-title-selected" data-alignment="center">{{ k }}</div>
+                        <div class="col sqs-col-2 span-2 filter-value-selected" data-alignment="center">{{ v }}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block JSscripts %}
+<script src="{% static 'js/calculator/result.js' %}"></script>
+{% endblock %}

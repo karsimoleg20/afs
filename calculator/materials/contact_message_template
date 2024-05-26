@@ -1,0 +1,24 @@
+
+
+===================================================
+Price Estimate, GBP
+===================================================
+                  
+                  Supply & Install          Supply only
+
+  Materials       {supply_only}             {supply_only}
+  --------------------------------------------------------------
+    Panels        {panel_price}             {panel_price}
+    Pedestals     {pedestal_price}          {pedestal_price}
+    Adhesive      {adhesive_price}          {adhesive_price}
+    Neoprene      {neoprene_price}          {neoprene_price}
+    Silver tape   {silver_tape_price}       {silver_tape_price}
+    Caps          {caps_price}              {caps_price}
+    Delivery      {delivery_price}          {delivery_price}
+  --------------------------------------------------------------
+  Labor           {labor_price}             0
+------------------------------------------------------------------
+  Total           {supply_install}          {supply_only}
+  Price per m2    {price_per_m2_supp_inst}  {price_per_m2_supp_only}
+
+===================================================

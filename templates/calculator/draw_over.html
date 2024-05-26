@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="sqs-block html-block sqs-block-html widen" data-block-type="2">
+        <div class="sqs-layout sqs-grid-12 columns-12">
+            <div class="row sqs-row" id="alerts">
+                <!-- Here goes alerts if any -->
+            </div>
+
+            <div class="row sqs-row" id="main_content">
+                <h2 style="white-space:pre-wrap;">Room selection</h2>
+
+                <div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47">
+                    <div class="sqs-block-content">
+                        <hr>
+                    </div>
+                </div>
+
+                <h1 id="selected_area" style="text-align: center; color:seagreen;"></h1>
+                
+                <h1 id="scale_label" style="text-align: center;"></h1>
+                <input class="field-element" id="adjusted_scale" name="adjusted_scale" type="range" min="1" max="200" value="100" step="0.1" onchange="adjust_scale()" spellcheck="false" aria-required="true" style="width: 50%; margin-left: 25%;">
+                
+                <div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47">
+                    <div class="sqs-block-content">
+                        <hr>
+                    </div>
+                </div>
+
+                <canvas id="canvas" style="width: 100%;" onmousedown="canvas_click(event)" oncontextmenu="return false;"></canvas>
+
+                <div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47">
+                    <div class="sqs-block-content">
+                        <hr>
+                    </div>
+                </div>
+
+                <div class="row sqs-row">
+                    <div class="col sqs-col-4 span-4" data-alignment="center">
+                        <div class="row sqs-row">
+                            <h2></h2>
+                        </div>
+                    </div>
+
+                    <div class="col sqs-col-4 span-4" data-block-type="53">
+                        <div class="sqs-block-content button-block sqs-block-button" style="margin-top: 4px; margin-bottom: 4px;">
+                            <div class="sqs-block-button-container--center" data-animation-role="button" data-alignment="center" data-button-size="large">
+                                <div class="sqs-block-button-element--large sqs-block-button-element" data-initialized="true" id="undo_btn" style="background-color:purple;">Undo</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col sqs-col-4 span-4" data-alignment="center">
+                        <div class="row sqs-row">
+                            <h2></h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47">
+                    <div class="sqs-block-content">
+                        <hr>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row sqs-row">
+                <div class="col sqs-col-4 span-4" data-block-type="53">
+                    <div class="sqs-block-content button-block sqs-block-button" style="margin-top: 4px; margin-bottom: 4px;">
+                        <div class="sqs-block-button-container--center" data-animation-role="button" data-alignment="center" data-button-size="medium">
+                            <a href="{% url 'upload_draw_over' %}" class="sqs-block-button-element--medium sqs-block-button-element" data-initialized="true" id="back_btn"><i class="fas fa-angle-left" aria-hidden="true"></i> Change floor plan</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col sqs-col-4 span-4" data-block-type="53">
+                    <div class="sqs-block-content button-block sqs-block-button" style="margin-top: 4px; margin-bottom: 4px;">
+                        <div class="sqs-block-button-container--center" data-animation-role="button" data-alignment="center" data-button-size="medium">
+                            <a href="{% url 'floor_area' %}" class="sqs-block-button-element--medium sqs-block-button-element" data-initialized="true" id="floor_area_btn">Floor area</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col sqs-col-4 span-4" data-block-type="53">
+                    <div class="sqs-block-content button-block sqs-block-button" style="margin-top: 4px; margin-bottom: 4px;">
+                        <div class="sqs-block-button-container--center" data-animation-role="button" data-alignment="center" data-button-size="medium">
+                            <a href="{% url 'filters' %}" class="sqs-block-button-element--medium sqs-block-button-element" data-initialized="true" id="continue_btn">Continue <i class="fas fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row sqs-row">
+                <h1 style="white-space:pre-wrap;">Help</h1>
+                <div class="sqs-block-content help" id="help_content">
+                    <!-- <div>
+                        <div style="border-bottom: 1px solid black;">
+                            <b>Floor plan image</b>
+                        </div>
+                    </div> -->
+                    <p>Select desirable areas to fit by drawing contours around them or switch to the basic workflow with manual input ('floor area').</p>
+                    <div>
+                        <div style="border-bottom: 1px solid black;">
+                            <b>Controls</b>
+                        </div>
+                    </div>
+                    <p><b>Left mouse button:</b> set a contour vertex.</p>
+                    <p><b>Right mouse button:</b> finish the contour (join first and last vertices).</p>
+                    <p><b>Undo:</b> remove the last contour.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+{% block JSscripts %}
+{{ scale|json_script:"scale" }}
+{{ img_src|json_script:"img_src" }}
+{{ errs|json_script:"errs" }}
+<script src="{% static 'js/calculator/draw_over.js' %}"></script>
+{% endblock %}

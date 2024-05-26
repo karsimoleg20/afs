@@ -26,7 +26,7 @@ SECRET_KEY = '-=2hqa+0f!_kz^m8hyfc67)c2zdavcuz^!!1pb%=o&8=h_*jbi'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.105', '192.168.0.100']
+ALLOWED_HOSTS = ['192.168.1.105', '192.168.0.100', 'turbo-telegram-jjqx579vxg7fq556-8001.app.github.dev']
 
 
 # Application definition

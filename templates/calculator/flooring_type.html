@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="sqs-block html-block sqs-block-html widen" data-block-type="2">
+
+        <div class="sqs-layout sqs-grid-12 columns-12">
+            <div class="row sqs-row" id="alerts">
+                <!-- Here goes alerts if any -->
+            </div>
+            
+            <div class="row sqs-row">
+                <div class="col sqs-col-12 span-12" data-alignment="center">
+
+                    <div class="row sqs-row" id="selection_cards">
+                        <!-- Here goes a corresponding selection cards -->
+                        <h2 style="white-space:pre-wrap;">Flooring type</h2>
+                        <div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47">
+                            <div class="sqs-block-content">
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row sqs-row" id="yui_3_17_2_1_1716809814865_109">
+                            <div class="col sqs-col-4 span-4" data-alignment="center">
+                                <div class="sqs-block-content selection-card selection-card-small" id="parquet">
+                                    Parquet
+                                </div>
+                            </div>
+                            <div class="col sqs-col-4 span-4" data-alignment="center" id="yui_3_17_2_1_1716809814865_108">
+                                <div class="sqs-block-content selection-card selection-card-small" id="laminate">
+                                    Laminate
+                                </div>
+                            </div>
+                            <div class="col sqs-col-4 span-4" data-alignment="center" id="yui_3_17_2_1_1716809814865_107">
+                                <div class="sqs-block-content selection-card selection-card-small" id="tiles">
+                                    Tiles
+                                </div>
+                            </div>
+                            <div class="col sqs-col-4 span-4" data-alignment="center" id="yui_3_17_2_1_1716809814865_106">
+                                <div class="sqs-block-content selection-card selection-card-small" id="epoxy">
+                                    Epoxy
+                                </div>
+                            </div>
+                            <div class="col sqs-col-4 span-4" data-alignment="center" id="yui_3_17_2_1_1716809814865_105">
+                                <div class="sqs-block-content selection-card selection-card-small" id="linoleum">
+                                    Linoleum
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47">
+                            <div class="sqs-block-content">
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row sqs-row">
+                        <div class="button-block sqs-block-button col sqs-col-12 span-12" data-block-type="53">
+                            <div class="sqs-block-content button-block sqs-block-button" style="width: 50%; float: left;">
+                                <div class="sqs-block-button-container--left" data-animation-role="button" data-alignment="left" data-button-size="medium">
+                                    <a href="/" class="sqs-block-button-element--medium sqs-block-button-element" data-initialized="true" id="back_btn"><i class="fas fa-angle-left" aria-hidden="true"></i> Back</a>
+                                </div>
+                            </div>
+                            <div class="sqs-block-content button-block sqs-block-button" style="margin-left: 50%; display: none;">
+                                <div class="sqs-block-button-container--right" data-animation-role="button" data-alignment="right" data-button-size="medium">
+                                    <a href="#" class="sqs-block-button-element--medium sqs-block-button-element" data-initialized="true" id="continue_btn">Continue <i class="fas fa-angle-right" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form action="{% url 'result' %}" method="post" id="floor-form">
+                    </form>
+
+                    <br>
+
+                    <div class="row sqs-row">
+                        <h1 style="white-space:pre-wrap;">Help</h1>
+                        <div class="sqs-block-content help" id="help_content">
+                            <div>
+                                <div style="border-bottom: 1px solid black;">
+                                    <b>Parquet</b>
+                                </div>
+                            </div>
+                            <p>Parquet flooring is a type of wood flooring that is composed of geometric patterns made from small, individual wood pieces. Known for its intricate designs and elegant appearance, parquet flooring adds a touch of sophistication and style to any interior space. Its durability and timeless appeal make it a popular choice for both traditional and modern homes.</p>
+
+                            <div>
+                                <div style="border-bottom: 1px solid black;">
+                                    <b>Laminate</b>
+                                </div>
+                            </div>
+                            <p>
+                                Laminate flooring is a cost-effective and versatile alternative to traditional hardwood flooring, featuring a photographic applique layer that mimics the look of wood, stone, or tile. It is known for its durability, easy installation, and low maintenance, making it a popular choice for busy households and commercial spaces. Laminate flooring is resistant to scratches, stains, and fading, offering a practical and stylish flooring solution.</p>
+
+                            <div>
+                                <div style="border-bottom: 1px solid black;">
+                                    <b>Tiles</b>
+                                </div>
+                            </div>
+                            <p>Tile flooring is a versatile and durable option made from materials such as ceramic, porcelain, or natural stone. Known for its resistance to moisture, stains, and wear, tile flooring is ideal for high-traffic areas, kitchens, and bathrooms. Available in a wide range of colors, sizes, and patterns, tile flooring can enhance the aesthetic of any space with its timeless appeal.</p>
+
+                            <div>
+                                <div style="border-bottom: 1px solid black;">
+                                    <b>Epoxy</b>
+                                </div>
+                            </div>
+                            <p>Epoxy flooring is a high-performance, durable surface created by applying multiple layers of epoxy resin to a concrete substrate. Known for its exceptional strength, resistance to chemicals, and seamless finish, epoxy flooring is ideal for industrial, commercial, and garage settings. Its glossy, easy-to-clean surface and customizable color and design options also make it an attractive choice for residential interiors.</p>
+
+                            <div>
+                                <div style="border-bottom: 1px solid black;">
+                                    <b>Linoleum</b>
+                                </div>
+                            </div>
+                            <p>Linoleum flooring is an eco-friendly and durable option made from natural materials like linseed oil, wood flour, and cork dust. Known for its resilience, antimicrobial properties, and ease of maintenance, linoleum is suitable for both residential and commercial spaces. It comes in a variety of colors and patterns, offering a versatile and attractive flooring solution.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}\
+
+{% block JSscripts %}
+<script src="{% static 'js/calculator/flooring_type.js' %}"></script>
+{% endblock %}

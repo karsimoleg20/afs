@@ -31,10 +31,7 @@
 
                         <hr>
 
-                        <div class="row sqs-row collapsible" style="cursor: pointer;">
-                            <div id="plus-minus" class="plus" style="width: 4%; float: left;">
-                                <i class="fas fa-plus" aria-hidden="true"></i>
-                            </div>
+                        <div class="row sqs-row" style="cursor: pointer;">
                             <div style="width: 32%; float: left;">
                                 <h1 style="white-space:pre-wrap;">Materials</h1>
                             </div>
@@ -44,112 +41,7 @@
                             <div style="width: 32%; float: left;">
                                 <h1 style="white-space:pre-wrap;" >{{ supply_only }}</h1>
                             </div>
-                        </div>
-
-                        <div class="content row sqs-row">
-                            <div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47">
-                                <div class="sqs-block-content">
-                                    <hr>
-                                </div>
-                            </div>
-
-                            <div style="width: 6%; float: left;">
-                                <h1 style="white-space:pre-wrap;"></h1>
-                            </div>
-                            <div style="width: 30%; float: left;">
-                                <h1 style="white-space:pre-wrap;">Panels</h1>
-                            </div>
-                            <div style="width: 32%; float: left;">
-                                <h1 style="white-space:pre-wrap;" >{{ panel_price }}</h1>
-                            </div>
-                            <div style="width: 32%; float: left;">
-                                <h1 style="white-space:pre-wrap;" >{{ panel_price }}</h1>
-                            </div>
-
-                            <div style="width: 6%; float: left;">
-                                <h1 style="white-space:pre-wrap;"></h1>
-                            </div>
-                            <div style="width: 30%; float: left;">
-                                <h1 style="white-space:pre-wrap;">Pedestals</h1>
-                            </div>
-                            <div style="width: 32%; float: left;">
-                                <h1 style="white-space:pre-wrap;" >{{ pedestal_price }}</h1>
-                            </div>
-                            <div style="width: 32%; float: left;">
-                                <h1 style="white-space:pre-wrap;" >{{ pedestal_price }}</h1>
-                            </div>
-
-                            <div style="width: 6%; float: left;">
-                                <h1 style="white-space:pre-wrap;"></h1>
-                            </div>
-                            <div style="width: 30%; float: left;">
-                                <h1 style="white-space:pre-wrap;">Adhesive</h1>
-                            </div>
-                            <div style="width: 32%; float: left;">
-                                <h1 style="white-space:pre-wrap;" >{{ adhesive_price }}</h1>
-                            </div>
-                            <div style="width: 32%; float: left;">
-                                <h1 style="white-space:pre-wrap;" >{{ adhesive_price }}</h1>
-                            </div>
-                            
-                            <div style="width: 6%; float: left;">
-                                <h1 style="white-space:pre-wrap;"></h1>
-                            </div>
-                            <div style="width: 30%; float: left;">
-                                <h1 style="white-space:pre-wrap;">Neoprene</h1>
-                            </div>
-                            <div style="width: 32%; float: left;">
-                                <h1 style="white-space:pre-wrap;" >{{ neoprene_price }}</h1>
-                            </div>
-                            <div style="width: 32%; float: left;">
-                                <h1 style="white-space:pre-wrap;" >{{ neoprene_price }}</h1>
-                            </div>
-
-                            <div style="width: 6%; float: left;">
-                                <h1 style="white-space:pre-wrap;"></h1>
-                            </div>
-                            <div style="width: 30%; float: left;">
-                                <h1 style="white-space:pre-wrap;">Silver tape</h1>
-                            </div>
-                            <div style="width: 32%; float: left;">
-                                <h1 style="white-space:pre-wrap;" >{{ silver_tape_price }}</h1>
-                            </div>
-                            <div style="width: 32%; float: left;">
-                                <h1 style="white-space:pre-wrap;" >{{ silver_tape_price }}</h1>
-                            </div>
-
-                            <div style="width: 6%; float: left;">
-                                <h1 style="white-space:pre-wrap;"></h1>
-                            </div>
-                            <div style="width: 30%; float: left;">
-                                <h1 style="white-space:pre-wrap;">Caps</h1>
-                            </div>
-                            <div style="width: 32%; float: left;">
-                                <h1 style="white-space:pre-wrap;" >{{ caps_price }}</h1>
-                            </div>
-                            <div style="width: 32%; float: left;">
-                                <h1 style="white-space:pre-wrap;" >{{ caps_price }}</h1>
-                            </div>
-
-                            <div style="width: 6%; float: left;">
-                                <h1 style="white-space:pre-wrap;"></h1>
-                            </div>
-                            <div style="width: 30%; float: left;">
-                                <h1 style="white-space:pre-wrap;">Delivery</h1>
-                            </div>
-                            <div style="width: 32%; float: left;">
-                                <h1 style="white-space:pre-wrap;" >{{ delivery_price }}</h1>
-                            </div>
-                            <div style="width: 32%; float: left;">
-                                <h1 style="white-space:pre-wrap;" >{{ delivery_price }}</h1>
-                            </div>
-
-                            <div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47">
-                                <div class="sqs-block-content">
-                                    <hr>
-                                </div>
-                            </div>
-                        </div>
+                        </div>                        
                         
                         <div class="row sqs-row">
                             <div style="width: 4%; float: left;">
@@ -206,10 +98,6 @@
                     </div>
 
                     <br>
-                    
-                    <form method="POST" action="{% url 'contact' %}" style="display: none;">
-                        <input id="calculations" name="calculations" type="text" value="{{ calculations }}">
-                    </form>
 
                     <div class="row sqs-row">
                         <div class="col sqs-col-8 span-8" data-block-type="53">
@@ -230,20 +118,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col sqs-col-4 span-4 filter-cell" data-alignment="center">
-                    <h1 style="white-space:pre-wrap; margin-left: 20px;">Your selecion</h1>
-                    {% for k, v in filters.items %}
-                    <div class="row sqs-row cell-selected">
-                        <div class="col sqs-col-2 span-2 filter-title-selected" data-alignment="center">{{ k }}</div>
-                        <div class="col sqs-col-2 span-2 filter-value-selected" data-alignment="center">{{ v }}</div>
-                    </div>
-                    {% endfor %}
-                </div>
             </div>
         </div>
     </div>
-{% endblock %}
-
-{% block JSscripts %}
-<script src="{% static 'js/calculator/result.js' %}"></script>
 {% endblock %}

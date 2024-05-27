@@ -36,6 +36,10 @@ def select_workflow(request):
     return render(request, "calculator/select_workflow.html", context=context)
 
 
+def flooring_type(request):
+    return render(request, "calculator/flooring_type.html")
+
+
 def filters(request):
     curr_dir = os.path.dirname(os.path.abspath(__file__))
     materials_dir = os.path.join(curr_dir, 'materials')
@@ -62,32 +66,35 @@ def filters(request):
 def result(request):
     from django.http import HttpResponse, HttpResponseNotFound
     if request.method == 'POST':
-        height = float(request.POST.get('height'))
+        flooring_type = request.POST.get('flooring_type')
         area = float(request.POST.get('area'))
-        selection_list = json.loads(request.POST.get('selection_list'))
-
-        calculator = Calculator(area, height, selection_list)
-        calculations = calculator.calculate()
-
-        calculations.update(
-            {
-                'height': height,
-                'area': area,
-            }
-        )
         
-        filters = calculator.humanize_filters()
-        calculations.update(
-            {
-                'selection_chain': ' - '.join([v for k, v in filters.items()]),
-            }
-        )
-        calculations_str = json.dumps(calculations)
+        labor_per_meter = 5
+        material_price_per_meter = 20
+
+        if flooring_type == 'parquet':
+            material_price_per_meter = 50
+        elif flooring_type == 'laminate':
+            material_price_per_meter = 30
+        elif flooring_type == 'tiles':
+            material_price_per_meter = 60
+        elif flooring_type == 'epoxy':
+            material_price_per_meter == 20
+        elif flooring_type == 'linoleum':
+            material_price_per_meter = 10
+        
+        material_price = material_price_per_meter * area
+        labor_price = labor_per_meter * area
+        total_price = material_price + labor_price
+        price_per_meter = material_price_per_meter + labor_per_meter
         
         context = {
-            **calculations,
-            'calculations': calculations_str,
-            'filters': filters,
+            'supply_only': material_price,
+            'labor_price': labor_price,
+            'supply_install': total_price,
+            'supply_only': material_price,
+            'price_per_m2_supp_inst': price_per_meter,
+            'price_per_m2_supp_only': material_price_per_meter,
         }
 
         return render(request, "calculator/result.html", context=context)

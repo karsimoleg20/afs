@@ -95,7 +95,7 @@ continue_btn.addEventListener(
 
             let form = document.createElement('form');
             form.setAttribute('method', 'POST');
-            form.setAttribute('action', '/filters');
+            form.setAttribute('action', '/flooring_type');
             main_content.append(form);
             main_content.querySelector('form').submit();
         }

@@ -31,15 +31,15 @@
 
                         <hr>
 
-                        <div class="row sqs-row" style="cursor: pointer;">
+                        <div class="row sqs-row">
                             <div style="width: 32%; float: left;">
                                 <h1 style="white-space:pre-wrap;">Materials</h1>
                             </div>
                             <div style="width: 32%; float: left;">
-                                <h1 style="white-space:pre-wrap;" >{{ supply_only }}</h1>
+                                <h1 style="white-space:pre-wrap;" >{{ supply_only|floatformat:2 }}</h1>
                             </div>
                             <div style="width: 32%; float: left;">
-                                <h1 style="white-space:pre-wrap;" >{{ supply_only }}</h1>
+                                <h1 style="white-space:pre-wrap;" >{{ supply_only|floatformat:2 }}</h1>
                             </div>
                         </div>                        
                         
@@ -51,7 +51,7 @@
                                 <h1 style="white-space:pre-wrap;">Labor</h1>
                             </div>
                             <div style="width: 32%; float: left;">
-                                <h1 style="white-space:pre-wrap;" >{{ labor_price }}</h1>
+                                <h1 style="white-space:pre-wrap;" >{{ labor_price|floatformat:2 }}</h1>
                             </div>
                             <div style="width: 32%; float: left;">
                                 <h1 style="white-space:pre-wrap;" >{{ 0 }}</h1>
@@ -68,10 +68,10 @@
                                 <h1 style="white-space:pre-wrap;">Total</h1>
                             </div>
                             <div style="width: 32%; float: left;">
-                                <h1 style="white-space:pre-wrap;" >{{ supply_install }}</h1>
+                                <h1 style="white-space:pre-wrap;" >{{ supply_install|floatformat:2 }}</h1>
                             </div>
                             <div style="width: 32%; float: left;">
-                                <h1 style="white-space:pre-wrap;" >{{ supply_only }}</h1>
+                                <h1 style="white-space:pre-wrap;" >{{ supply_only|floatformat:2 }}</h1>
                             </div>
                         </div>
 
@@ -83,10 +83,10 @@
                                 <h1 style="white-space:pre-wrap;">Price per m<sup>2</sup></h1>
                             </div>
                             <div style="width: 32%; float: left;">
-                                <h1 style="white-space:pre-wrap;" >{{ price_per_m2_supp_inst }}</h1>
+                                <h1 style="white-space:pre-wrap;" >{{ price_per_m2_supp_inst|floatformat:2 }}</h1>
                             </div>
                             <div style="width: 32%; float: left;">
-                                <h1 style="white-space:pre-wrap;" >{{ price_per_m2_supp_only }}</h1>
+                                <h1 style="white-space:pre-wrap;" >{{ price_per_m2_supp_only|floatformat:2 }}</h1>
                             </div>
                         </div>
                         

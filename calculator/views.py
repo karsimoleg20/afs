@@ -1,36 +1,17 @@
-import datetime
 from io import BytesIO
 import base64
-import os
-import json
 
-from django.urls import reverse
-from django.shortcuts import render, redirect
-from django.http.response import HttpResponse
+from django.shortcuts import render
+from django.http.response import HttpResponseNotFound
 from django.conf import settings
 from pdf2image import convert_from_bytes
 import requests
 
-from .utils import read_help, Calculator
 
-
-def select_workflow(request):
-    curr_dir = os.path.dirname(os.path.abspath(__file__))
-    materials_dir = os.path.join(curr_dir, 'materials')
-
-    help_dir = os.path.join(materials_dir, 'help')
-
-    floor_area_help = ''
-    with open(os.path.join(help_dir, 'workflows/floor_area'), 'r') as f:
-        floor_area_help = f.read()
-    
-    floor_plan_help = ''
-    with open(os.path.join(help_dir, 'workflows/floor_plan'), 'r') as f:
-        floor_plan_help = f.read()
-    
+def select_workflow(request):    
     context = {
-        'floor_area_help': floor_area_help,
-        'floor_plan_help': floor_plan_help,
+        'floor_area_help': 'Provide the total area along with the height of the finished floor and receive the price estimation.',
+        'floor_plan_help': 'Upload the floor plan and allow our state of the art AI based system to guide you through the estimation process.',
     }
 
     return render(request, "calculator/select_workflow.html", context=context)
@@ -40,31 +21,7 @@ def flooring_type(request):
     return render(request, "calculator/flooring_type.html")
 
 
-def filters(request):
-    curr_dir = os.path.dirname(os.path.abspath(__file__))
-    materials_dir = os.path.join(curr_dir, 'materials')
-
-    tree_path = os.path.join(materials_dir, 'tree.json')
-    with open(tree_path, 'r') as f:
-        tree = json.load(f)
-    
-    help_dir = os.path.join(materials_dir, 'help')
-    read_help(help_dir, tree)
-
-    price_path = os.path.join(materials_dir, 'price.json')
-    with open(price_path, 'r') as f:
-        price = json.load(f)
-
-    context = {
-        'tree': tree,
-        'price': price,
-    }
-
-    return render(request, "calculator/filters.html", context=context)
-
-
 def result(request):
-    from django.http import HttpResponse, HttpResponseNotFound
     if request.method == 'POST':
         flooring_type = request.POST.get('flooring_type')
         area = float(request.POST.get('area'))
@@ -114,7 +71,6 @@ def upload_floorplan(request):
 
 
 def room_selection(request):
-    from django.http import HttpResponseNotFound
     if request.method == 'POST':
         img = request.FILES.get('image')
         scale = float(request.POST.get('scale'))
@@ -171,7 +127,6 @@ def upload_draw_over(request):
 
 
 def draw_over(request):
-    from django.http import HttpResponseNotFound
     if request.method == 'POST':
         img = request.FILES.get('image')
         scale = float(request.POST.get('scale'))
@@ -202,85 +157,4 @@ def draw_over(request):
 
         return render(request, 'calculator/draw_over.html', context=context)
     
-    return HttpResponseNotFound('<h1>Nothing here.</h1>')
-
-
-def height(request):
-    from django.http import HttpResponseNotFound
-    if request.method == 'POST':
-        selection_list = json.loads(request.POST.get('selection_list'))
-
-        calculator = Calculator(10, 100, selection_list)
-        calculations = calculator.calculate()
-        
-        filters = calculator.humanize_filters()
-
-        context = {
-            'filters': filters,
-        }
-
-        return render(request, 'calculator/height.html', context=context)
-
-    return HttpResponseNotFound('<h1>Nothing here.</h1>')
-
-
-def imitate_img_processing(request):
-    from django.http import JsonResponse
-
-    return JsonResponse(
-        {
-            "rooms": [
-                [
-                    [0.1, 0.1],
-                    [0.3, 0.1],
-                    [0.3, 0.4],
-                    [0.15, 0.4],
-                    [0.15, 0.3],
-                    [0.1, 0.3],
-                ],
-                [
-                    [0.1, 0.33],
-                    [0.12, 0.33],
-                    [0.12, 0.43],
-                    [0.5, 0.43],
-                    [0.5, 0.9],
-                    [0.1, 0.9],
-                ],
-                [
-                    [0.33, 0.1],
-                    [0.9, 0.1],
-                    [0.9, 0.4],
-                    [0.33, 0.4],
-                ],
-                [
-                    [0.53, 0.43],
-                    [0.9, 0.43],
-                    [0.9, 0.9],
-                    [0.53, 0.9],
-                ],
-            ]
-        }
-    )
-
-
-def contact(request):
-    from django.http import HttpResponse, HttpResponseNotFound
-    if request.method == 'POST':
-        calculations = request.POST.get('calculations')
-
-        message = ''
-        if calculations:
-            calculations = json.loads(calculations)
-            curr_dir = os.path.dirname(os.path.abspath(__file__))
-            materials_dir = os.path.join(curr_dir, 'materials')
-            with open(os.path.join(materials_dir, 'contact_message_template'), 'r', encoding='utf-8') as f:
-                msg_template = f.read()
-            message = msg_template.format(**calculations)
-        
-        context = {
-            'message': message,
-            'selection_chain': calculations['selection_chain'],
-        }
-
-        return render(request, "calculator/contact.html", context=context)
     return HttpResponseNotFound('<h1>Nothing here.</h1>')

@@ -1,0 +1,144 @@
+.help {
+    background-color: rgb(200, 200, 200);
+    border-radius: 10px;
+    /* border: 1px solid black; */
+    padding: 10px 10px 10px 10px;
+    color: black;
+}
+
+.selection-card {
+    background-color: #245c5a;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    height: 250px;
+    line-height: 250px;
+    margin: 20px;
+    border-radius: 5px;
+    font-size: 32px;
+    text-transform: capitalize!important;
+}
+
+.selection-card-small {
+    height: 120px!important;
+    line-height: 120px!important;
+    margin: 5px!important;
+    font-size: 28px!important;
+}
+
+.selection-card-muted {
+    background-color: #cecece;
+    color: rgb(124, 124, 124);
+    text-align: center;
+    height: 250px;
+    line-height: 250px;
+    margin: 20px;
+    border-radius: 5px;
+    font-size: 32px;
+    display: block;
+    text-transform: capitalize!important;
+}
+
+.selection-card-selected, .selection-card:hover{
+    background-color: #3d9996;
+    color: black;
+    box-shadow: 0px 0px 10px #3d9996;
+}
+
+.cell-active {
+    margin: 15px;
+    box-sizing: border-box;
+    border: 1px solid #741056;
+}
+
+.filter-title {
+    background-color: #741056;
+    color: white;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.filter-value {
+    text-align: center;
+    color: #741056;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.cell-inactive {
+    margin: 15px;
+    box-sizing: border-box;
+    border: 1px solid #c6c6c6;
+}
+
+.filter-title-inactive {
+    background-color: #c6c6c6;
+    color: white;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.filter-value-inactive {
+    text-align: center;
+    color: #c6c6c6;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.cell-selected {
+    margin: 15px;
+    box-sizing: border-box;
+    border: 1px solid #132b2a;
+}
+
+.filter-title-selected {
+    background-color: #132b2a;
+    color: white;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.filter-value-selected {
+    text-align: center;
+    color: #132b2a;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.content {
+    /* padding: 0 18px; */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    /* background-color: #f1f1f1; */
+}
+
+.alert {
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+@media screen and (max-width: 640px) {
+    .filter-cell {
+        display: none;
+    }
+}
+
+/* @media screen and (min-width: 640px) {
+    .widen {
+        width: 140%!important;
+        margin-left: -20%!important;
+    }
+} */

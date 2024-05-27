@@ -26,7 +26,7 @@ SECRET_KEY = '-=2hqa+0f!_kz^m8hyfc67)c2zdavcuz^!!1pb%=o&8=h_*jbi'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.105', '192.168.0.100', 'turbo-telegram-jjqx579vxg7fq556-8001.app.github.dev']
+ALLOWED_HOSTS = ['localhost', '192.168.1.105', '192.168.0.100', 'turbo-telegram-jjqx579vxg7fq556-8001.app.github.dev']
 
 
 # Application definition
@@ -126,4 +126,4 @@ STATICFILES_DIRS = [
 ]
 
 # image processing URI
-IMAGE_PROCESSING_URI = 'http://127.0.0.1:8001/'
+IMAGE_PROCESSING_URI = os.environ.get('IMAGE_PROCESSING_URI', '')

@@ -11,7 +11,7 @@ from django.conf import settings
 from pdf2image import convert_from_bytes
 import requests
 
-from .utils import read_help, Calculator, save_file_to_az_storage
+from .utils import read_help, Calculator
 
 
 def select_workflow(request):
